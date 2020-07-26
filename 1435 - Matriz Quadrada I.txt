@@ -1,0 +1,99 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+/*  URI Online Judge | 1435
+Matriz Quadrada I
+Adaptado por Josué P. de Castro Brasil
+Timelimit: 2
+
+Escreva um algoritmo que leia um inteiro N (0 ≤ N ≤ 100), correspondente a 
+ordem de uma matriz M de inteiros, e construa a matriz de acordo com o exemplo
+abaixo.
+
+Entrada
+A entrada consiste de vários inteiros, um valor por linha, correspondentes 
+as ordens das matrizes a serem construídas. O final da entrada é marcado por 
+um valor de ordem igual a zero (0).
+
+Saída
+Para cada inteiro da entrada imprima a matriz correspondente, de acordo com o 
+exemplo. Os valores das matrizes devem ser formatados em um campo de tamanho 
+3 justificados à direita e separados por espaço. Após o último caractere de 
+cada linha da matriz não deve haver espaços em branco. Após a impressão de 
+cada matriz deve ser deixada uma linha em branco.
+
+Exemplo de Entrada 	Exemplo de Saída
+1			  1
+2			  
+3  			  1   1
+4 			  1   1
+5
+0			  1   1   1
+   			  1   2   1
+ 			  1   1   1
+   
+   			  1   1   1   1
+       			  1   2   2   1
+ 		 	  1   2   2   1
+ 	 		  1   1   1   1
+ 
+  			  1   1   1   1   1
+  			  1   2   2   2   1
+      			  1   2   3   2   1
+  			  1   2   2   2   1
+   			  1   1   1   1   1
+	
+ 
+ */
+public class Main {
+	
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int linha, coluna;
+		
+		 
+
+		  while (N!=0){
+		int mat[][] = new int [N][N];
+	       int valor = 1; 
+	       int auxN = N;
+	     
+	       for (int valormatriz = 0; valormatriz < N; valormatriz++){
+	    	   linha = valormatriz; 
+	         
+	        	for (int i = linha; i < auxN; i++){
+	        		coluna = valormatriz; 
+	            
+	            	for (int j = coluna; j < auxN; j++){
+	            		mat[i][j] = valor;
+	            }
+	         }
+	      valor++;
+	      auxN--;
+	      }
+	      
+		
+
+			for (int i=0; i<N; i++) {
+				for (int j=0; j<N; j++) {
+				if (j == 0)
+					System.out.printf("%3d", mat[i][j]);
+				else
+					System.out.printf("%4d", mat[i][j]);
+
+			}
+
+			System.out.printf("\n");
+		}
+
+		System.out.printf("\n");
+ N = sc.nextInt();
+	}
+			
+sc.close();	
+  
+}   
+}
